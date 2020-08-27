@@ -193,29 +193,34 @@
 .navbar-toggle {
   position: relative;
   float: right;
-  padding: 9px 10px;
+  padding: 17px 13px;
   margin-right: @navbar-padding-horizontal;
   .navbar-vertical-align(34px);
-  background-color: transparent;
+  background-color: @purple;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
-  border-radius: @border-radius-base;
-
+  border-radius: 50%;  
+  box-shadow: 1px 2px 3px @purple;
+  -moz-box-shadow: 1px 2px 3px @purple;
+  -o-box-shadow: 1px 2px 3px @purple;
+  .anima;
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
   &:focus {
+    background-color: @magenta;
     outline: 0;
+    .anima;
   }
 
   // Bars
   .icon-bar {
     display: block;
-    width: 22px;
-    height: 2px;
+    width: 25px;
+    height: 3px;
     border-radius: 1px;
   }
   .icon-bar + .icon-bar {
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
   @media (min-width: @grid-float-breakpoint) {
@@ -544,19 +549,30 @@
   .navbar-nav {
     > li > a {
       color: @navbar-inverse-link-color;
-
+      background: @purple;
+      padding: 5px 10px;
+      margin: 20px 15px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      font-size:17px;
+      .anima;
       &:hover,
       &:focus {
+        .anima;
         color: @navbar-inverse-link-hover-color;
         background-color: @navbar-inverse-link-hover-bg;
       }
     }
     > .active > a {
+      .anima;
       &,
       &:hover,
       &:focus {
+        .anima;
         color: @navbar-inverse-link-active-color;
         background-color: @navbar-inverse-link-active-bg;
+        font-weight: 900;
       }
     }
     > .disabled > a {

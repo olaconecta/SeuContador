@@ -4,24 +4,71 @@
 // Variables
 // --------------------------------------------------
 
+// Fonts
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
+
+@black:                  #333;
+@gray-base:              #525252;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
-@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray:                   #8D8D8D;
 @gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@gray-lighter:           lighten(@gray-base, 51.5%); // #eee
+@white:                  #F2F2F2;
 
-@brand-primary:         darken(#428bca, 6.5%); // #337ab7
-@brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
+@brand-primary:         #1D6289;
+@brand-success:         #4abc91;
+@brand-info:            #F2F2F2;
+@brand-warning:         #f6b806;
+@brand-danger:          #e20163;
 
+@dblue:  @brand-primary;
+
+@lorange:                #FFB031;
+@orange:                #F2A141;
+@dorange:                #EA8C2F;
+@purple:                #5a2873;
+@lblue:                  #40A8CC;
+@blue:                 #2C82A8;
+
+@yellow:                #f4e807;
+@magenta:               #e20163;
+@cherry:                #a41f67;
+@purple:                #5a2873;
+@cyan:                  #20b8ce;
+@green:                 #4abc91;
+
+// DEGRADES
+.orangenta {
+    background: -moz-linear-gradient(left, @orange 0%, @magenta 100%); 
+    background: -webkit-linear-gradient(left, @orange 0%,@magenta 100%); 
+    background: linear-gradient(to right, @orange 0%,@magenta 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@orange', endColorstr='@magenta',GradientType=1 ); 
+}
+.cherple {
+    background: -moz-linear-gradient(top, @cherry 0%, @purple 100%); 
+    background: -webkit-linear-gradient(top, @cherry 0%,@purple 100%); 
+    background: linear-gradient(to bottom, @cherry 0%,@purple 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@cherry', endColorstr='@purple',GradientType=0 ); 
+}
+.degrayde {
+    background: -moz-linear-gradient(top, white 0%,  @gray-lighter 100%); 
+    background: -webkit-linear-gradient(top, white 0%, @gray-lighter 100%); 
+    background: linear-gradient(to bottom, white 0%, @gray-lighter 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='@gray-lighter',GradientType=1 ); 
+}
+@orangenta:             .orangenta;
+
+// animação
+.anima{
+    -webkit-transition:all 0.34s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;
+}
+
+@img: "../img";
 
 //== Scaffolding
 //
@@ -43,8 +90,10 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  'Nunito', sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -104,9 +153,9 @@
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        3px;
+@border-radius-large:       3px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -146,29 +195,29 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @purple;
+@btn-default-bg:                 @yellow;
+@btn-default-border:             darken(@yellow, 2%);
 
-@btn-primary-color:              #fff;
+@btn-primary-color:              @yellow;
 @btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-border:             darken(@btn-primary-bg, 10%);
 
 @btn-success-color:              #fff;
 @btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
+@btn-success-border:             darken(@btn-success-bg, 10%);
 
 @btn-info-color:                 #fff;
 @btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
+@btn-info-border:                darken(@btn-info-bg, 7%);
 
-@btn-warning-color:              #fff;
+@btn-warning-color:              @white;
 @btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
+@btn-warning-border:             darken(@btn-warning-bg, 7%);
 
 @btn-danger-color:               #fff;
 @btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+@btn-danger-border:              darken(@btn-danger-bg, 7%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -329,9 +378,11 @@
 @grid-gutter-width:         30px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
-@grid-float-breakpoint:     @screen-sm-min;
+// @grid-float-breakpoint:     @screen-sm-min;
+@grid-float-breakpoint:     681px;
 //** Point at which the navbar begins collapsing.
-@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+// @grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+@grid-float-breakpoint-max: 680px;
 
 
 //== Container sizes
@@ -339,7 +390,7 @@
 //## Define the maximum width of `.container` for different screen sizes.
 
 // Small screen / tablet
-@container-tablet:             (720px + @grid-gutter-width);
+@container-tablet:             (720px);
 //** For `@screen-sm-min` and up.
 @container-sm:                 @container-tablet;
 
@@ -392,18 +443,18 @@
 
 //=== Inverted navbar
 // Reset inverted navbar basics
-@navbar-inverse-color:                      lighten(@gray-light, 15%);
-@navbar-inverse-bg:                         #222;
-@navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
+@navbar-inverse-color:                      @white;
+@navbar-inverse-bg:                         transparent;
+@navbar-inverse-border:                     none;
 
 // Inverted navbar links
 @navbar-inverse-link-color:                 lighten(@gray-light, 15%);
-@navbar-inverse-link-hover-color:           #fff;
-@navbar-inverse-link-hover-bg:              transparent;
+@navbar-inverse-link-hover-color:           @purple;
+@navbar-inverse-link-hover-bg:              @white;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
-@navbar-inverse-link-disabled-color:        #444;
-@navbar-inverse-link-disabled-bg:           transparent;
+@navbar-inverse-link-active-bg:             @white;
+@navbar-inverse-link-disabled-color:        @gray;
+@navbar-inverse-link-disabled-bg:           @gray-lighter;
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
@@ -411,9 +462,9 @@
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            #333;
+@navbar-inverse-toggle-hover-bg:            @magenta;
 @navbar-inverse-toggle-icon-bar-bg:         #fff;
-@navbar-inverse-toggle-border-color:        #333;
+@navbar-inverse-toggle-border-color:        transparent;
 
 
 //== Navs

@@ -109,7 +109,7 @@
 
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .5); @end-color: rgba(0, 0, 0, .0001));
+    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .2); @end-color: rgba(0, 0, 0, .0001));
   }
   &.right {
     right: 0;
@@ -123,7 +123,7 @@
     color: @carousel-control-color;
     text-decoration: none;
     outline: 0;
-    .opacity(.9);
+    .opacity(.5);
   }
 
   // Toggles
@@ -132,23 +132,30 @@
   .glyphicon-chevron-left,
   .glyphicon-chevron-right {
     position: absolute;
-    top: 50%;
+    top: 91%;
     z-index: 5;
     display: inline-block;
-    margin-top: -10px;
+    // margin-top: -10px;
+    opacity: 1;
   }
   .icon-prev,
   .glyphicon-chevron-left {
+    color:@dblue;
     left: 50%;
     margin-left: -10px;
+    opacity: 1;
   }
   .icon-next,
   .glyphicon-chevron-right {
+    color:@dblue;
     right: 50%;
     margin-right: -10px;
+    opacity: 1;
   }
   .icon-prev,
   .icon-next {
+    opacity: 1;
+    color:@dblue;
     width: 20px;
     height: 20px;
     font-family: serif;
@@ -185,9 +192,10 @@
 
   li {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
+    width: 49px;
+    height: 21px;
+    margin: 2px;
+    border-radius:50%;
     text-indent: -999px;
     cursor: pointer;
     // IE8-9 hack for event handling
@@ -207,8 +215,7 @@
   }
 
   .active {
-    width: 12px;
-    height: 12px;
+    
     margin: 0;
     background-color: @carousel-indicator-active-bg;
   }
@@ -225,9 +232,8 @@
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: @carousel-caption-color;
-  text-align: center;
-  text-shadow: @carousel-text-shadow;
+  // color: @carousel-caption-color;
+  // text-shadow: @carousel-text-shadow;
 
   & .btn {
     text-shadow: none; // No shadow for button elements in carousel-caption

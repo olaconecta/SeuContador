@@ -18,44 +18,59 @@
   touch-action: manipulation;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
+  border: none;
+  border-bottom:3px solid transparent;
+  border-right:3px solid transparent;
+  border-top:.5px transparent solid;
+    border-left:.5px transparent solid;
   .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
   .user-select(none);
-
+  .anima;
   &,
   &:active,
   &.active {
     &:focus,
     &.focus {
+      .anima;
       .tab-focus();
     }
   }
-
+  
   &:hover,
   &:focus,
   &.focus {
+    .anima;
     color: @btn-default-color;
     text-decoration: none;
   }
-
+  
   &:active,
   &.active {
+    .anima;
     background-image: none;
-    outline: 0;
-    .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    // outline: 0;
+    border-bottom:0px transparent solid;
+    border-right:0px transparent solid;
+    margin-top:3px;
+    margin-left:3px;
+    border-top:.5px transparent solid;
+    border-left:.5px transparent solid;
+    // .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
   }
-
+  
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
     cursor: @cursor-disabled;
     .opacity(.65);
     .box-shadow(none);
+    .anima;
   }
-
-  a& {
+  
+  & {
     &.disabled,
     fieldset[disabled] & {
+      .anima;
       pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
     }
   }
