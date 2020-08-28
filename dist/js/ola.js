@@ -36,9 +36,9 @@ document.getElementById("menu-fb").setAttribute('href', 'http://blog.olaconecta.
 
 // MENU
 // document.getElementById("menu-face").innerHTML = '<i class="fab fa-facebook-square"></i>';
-document.getElementById("menu-insta").innerHTML = '<i class="fab fa-instagram"></i>';
+document.getElementById("menu-insta").innerHTML = '<i class="fab fa-instagram"></i>  Segue a gente no Insta';
 // document.getElementById("menu-tt").innerHTML = '<i class="fab fa-twitter"></i>';
-document.getElementById("menu-in").innerHTML = '<i class="fab fa-linkedin"></i>';
+// document.getElementById("menu-in").innerHTML = '<i class="fab fa-linkedin"></i>';
 
 // document.getElementById("menu-face").setAttribute('href', 'https://www.facebook.com/OlaConecta/');
 document.getElementById("menu-insta").setAttribute('href', 'https://www.instagram.com/SeuContador.com.vc/');

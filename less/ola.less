@@ -35,11 +35,12 @@ body {
   right: 6px!important;
 }
 .links-sociais {
-  background:rgba(216, 60, 97,.2);
+  // background:rgba(216, 60, 97,.2);
+  background:@white;
   padding: 8px 14px 0 0;
   border-radius: 17px;
   position: fixed;
-  top:40vh;
+  bottom:5vh;
   left:-25px;
   z-index:1500;
   ul {
@@ -58,11 +59,14 @@ body {
 .separador {
   display:none;
 }
+.btn, .btn:hover, .btn:active, .btn:visited{
+  border-radius: 50px;
+}
 /////////////
 // MODAL   //
 /////////////
 .modal-open .modal {
-  background: rgba(216, 60, 97,.7);
+  background: rgba(29, 98, 137,.7);
   z-index: 2147483648;
 }
 .modal-header { 
@@ -100,7 +104,7 @@ body {
 .form-control{
   color:@gray-darker;
   &:focus {
-    border-color: @purple;
+    border-color: @orange;
     box-shadow: inset 0 1px 1px rgba(85, 83, 83, 0.075), 0 0 8px rgba(71, 13, 78, 0.527);
   }
 }
@@ -183,24 +187,33 @@ a, button, .ola {
   // SECTIONS //
   //////////////
   #home {
-    // background: url('@{img}/bg-home-orange.jpg') center top;
-    // height: 100vh;
+    background: url('@{img}/bg-home-orange.jpg') top/cover;
+    height: 100vh;
     position: relative;
     z-index:999;
     .titulo {
-      color:@white;
-      text-shadow: 1px 1px 3px @purple;
-      text-align: center;
+      background-color:@white;
+      // text-shadow: 1px 1px 3px @purple;
+      box-shadow: 2px 2px 7px @dblue;
+      text-align: left;
       position: absolute;
-      top:34vh;
+      padding: 5px 20px 25px;
+      border-top-left-radius: 10%;
+      border-bottom-right-radius: 10%;
+      top:17vh;
+      height: auto;
+      // top:0;
+      // bottom:0;
       left:0;
       right:0;
       h2{
-        font-size:70px;
+        font-size:21px;
+        color: @dblue;        
+        font-weight: 700;
       }
       p.lead {
         font-weight: 200;
-        font-size:34px;
+        font-size:17px;
         // color: #999;
       }    
     }
@@ -209,6 +222,13 @@ a, button, .ola {
         color:@white;                
       }
     }
+    // .logo img {
+    //   width: 250px;
+    //   height: auto;
+    //   position: absolute;
+    //   top: 5%;
+    //   left: 17%;
+    // }
   }
   #redes {
     background: url('@{img}/bg-home-2.jpg') center top;
@@ -1258,7 +1278,8 @@ a, button, .ola {
       background: transparent;
     }
     .links-sociais {
-      background:rgba(216, 60, 97,.2);
+      // background:rgba(216, 60, 97,.2);
+      background:@white;
       padding: 10px 8px 0 0;
       position: fixed;
       top:2vh;
