@@ -17,30 +17,31 @@
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   #8D8D8D;
 @gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 51.5%); // #eee
-@white:                  #F2F2F2;
+@gray-lighter:           #f2f2f2;
+@white:                  #fefefe;
 
-@brand-primary:         #1D6289;
-@brand-success:         #4abc91;
-@brand-info:            #F2F2F2;
-@brand-warning:         #f6b806;
-@brand-danger:          #e20163;
 
-@dblue:  @brand-primary;
 
-@lorange:                #FFB031;
-@orange:                #F2A141;
-@dorange:                #EA8C2F;
-@purple:                #5a2873;
-@lblue:                  #40A8CC;
+
+@lorange:              #FFB031;
+@orange:               #F2A141;
+@dorange:              #EA8C2F;
+@lblue:                #40A8CC;
 @blue:                 #2C82A8;
 
+@brand-primary:        #1D6289;
+@brand-success:        @green;
+@brand-info:           @lblue;
+@brand-warning:        @lorange;
+@brand-danger:         #e20163;
+
+@dblue:  @brand-primary;
+@purple:                @brand-primary;
 @yellow:                #f4e807;
 @magenta:               #e20163;
 @cherry:                #a41f67;
-@purple:                #5a2873;
 @cyan:                  #20b8ce;
-@green:                 #4abc91;
+@green:                 #42CCA4;
 
 // DEGRADES
 .orangenta {
@@ -49,17 +50,17 @@
     background: linear-gradient(to right, @lorange 0%,@dorange 100%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@lorange', endColorstr='@dorange',GradientType=1 ); 
 }
-.cherple {
-    background: -moz-linear-gradient(top, @cherry 0%, @purple 100%); 
-    background: -webkit-linear-gradient(top, @cherry 0%,@purple 100%); 
-    background: linear-gradient(to bottom, @cherry 0%,@purple 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@cherry', endColorstr='@purple',GradientType=0 ); 
+.cherple, .bluegrade {
+    background: -moz-linear-gradient(top, @lblue 0%, @dblue 100%); 
+    background: -webkit-linear-gradient(top, @lblue 0%,@dblue 100%); 
+    background: linear-gradient(to bottom, @lblue 0%,@dblue 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@lblue', endColorstr='@dblue',GradientType=0 ); 
 }
 .degrayde {
-    background: -moz-linear-gradient(top, white 0%,  @gray-lighter 100%); 
-    background: -webkit-linear-gradient(top, white 0%, @gray-lighter 100%); 
-    background: linear-gradient(to bottom, white 0%, @gray-lighter 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='@gray-lighter',GradientType=1 ); 
+    background: -moz-linear-gradient(top, @gray-lighter 0%,  @gray 100%); 
+    background: -webkit-linear-gradient(top, @gray-lighter 0%, @gray 100%); 
+    background: linear-gradient(to bottom, @gray-lighter 0%, @gray 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@gray-lighter', endColorstr='@gray',GradientType=1 ); 
 }
 @orangenta:             .orangenta;
 
@@ -91,7 +92,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+// @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 @font-family-sans-serif:  'Nunito', sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
@@ -195,9 +196,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              @purple;
-@btn-default-bg:                 @yellow;
-@btn-default-border:             darken(@yellow, 2%);
+@btn-default-color:              @white;
+@btn-default-bg:                 @lorange;
+@btn-default-border:             @orange;
 
 @btn-primary-color:              @white;
 @btn-primary-bg:                 @dorange;
@@ -379,10 +380,10 @@
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 // @grid-float-breakpoint:     @screen-sm-min;
-@grid-float-breakpoint:     681px;
+@grid-float-breakpoint:     1025px;
 //** Point at which the navbar begins collapsing.
 // @grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
-@grid-float-breakpoint-max: 680px;
+@grid-float-breakpoint-max: 1024px;
 
 
 //== Container sizes
@@ -410,7 +411,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    100px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -449,10 +450,10 @@
 
 // Inverted navbar links
 @navbar-inverse-link-color:                 lighten(@gray-light, 15%);
-@navbar-inverse-link-hover-color:           @purple;
-@navbar-inverse-link-hover-bg:              @white;
-@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             @white;
+@navbar-inverse-link-hover-color:           @white;
+@navbar-inverse-link-hover-bg:              @dorange;
+@navbar-inverse-link-active-color:          @dorange;
+@navbar-inverse-link-active-bg:             transparent;
 @navbar-inverse-link-disabled-color:        @gray;
 @navbar-inverse-link-disabled-bg:           @gray-lighter;
 

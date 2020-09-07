@@ -108,6 +108,12 @@
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
+a {
+  color: @orange;
+  &:hover {
+    color: @dorange;    
+  }
+}
 
 // Link buttons
 // -------------------------
@@ -115,7 +121,7 @@
 // Make a button look and behave like a link
 .btn-link {
   font-weight: 400;
-  color: @link-color;
+  color: @orange;
   border-radius: 0;
 
   &,
@@ -134,7 +140,7 @@
   }
   &:hover,
   &:focus {
-    color: @link-hover-color;
+    color: @dorange;
     text-decoration: @link-hover-decoration;
     background-color: transparent;
   }

@@ -97,7 +97,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: @carousel-control-width;
+  width: 5%;
   font-size: @carousel-control-font-size;
   color: @carousel-control-color;
   text-align: center;
@@ -109,12 +109,12 @@
 
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .2); @end-color: rgba(0, 0, 0, .0001));
+    // #gradient > .horizontal(@start-color: rgba(0, 0, 0, .2); @end-color: rgba(0, 0, 0, .0001));
   }
   &.right {
     right: 0;
     left: auto;
-    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .0001); @end-color: rgba(0, 0, 0, .5));
+    // #gradient > .horizontal(@start-color: rgba(0, 0, 0, .0001); @end-color: rgba(0, 0, 0, .5));
   }
 
   // Hover/focus state
@@ -129,47 +129,57 @@
   // Toggles
   .icon-prev,
   .icon-next,
-  .glyphicon-chevron-left,
-  .glyphicon-chevron-right {
+  .fa-chevron-left,
+  .fa-chevron-right {
     position: absolute;
-    top: 91%;
+    top: 50%;
     z-index: 5;
     display: inline-block;
     // margin-top: -10px;
+    .anima;
     opacity: 1;
+    &:hover {
+      .anima;
+      color: darken(@gray-darker, 10%);
+      font-size: 21px;
+    }    
   }
   .icon-prev,
-  .glyphicon-chevron-left {
-    color:@dblue;
-    left: 50%;
-    margin-left: -10px;
+  .fa-chevron-left {
+    color:@gray-dark;
+    left: 20%;
+    // margin-left: -10px;
     opacity: 1;
   }
   .icon-next,
-  .glyphicon-chevron-right {
-    color:@dblue;
-    right: 50%;
-    margin-right: -10px;
+  .fa-chevron-right {
+    color:@gray-dark;
+    right: 20%;
+    // margin-right: -10px;
     opacity: 1;
   }
   .icon-prev,
   .icon-next {
     opacity: 1;
     color:@dblue;
-    width: 20px;
-    height: 20px;
-    font-family: serif;
+    width: 40px;
+    height: 40px;
+    font-family: 'Font Awesome';
     line-height: 1;
   }
 
   .icon-prev {
     &:before {
-      content: "\2039";// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+      font-family: 'Font Awesome';
+      // content: "\2039";
+      content: "\f053";
     }
   }
   .icon-next {
     &:before {
-      content: "\203a";// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+      font-family: 'Font Awesome';
+      // content: "\203a";
+      content: "\f054";
     }
   }
 }
@@ -181,8 +191,8 @@
 
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
+  bottom: 7vh;
+  left: 7%;
   z-index: 15;
   width: 60%;
   padding-left: 0;
@@ -192,12 +202,12 @@
 
   li {
     display: inline-block;
-    width: 49px;
-    height: 21px;
-    margin: 2px;
-    border-radius:50%;
+    width: 17px;
+    height: 10px;
+    margin-right: 0px;    
     text-indent: -999px;
-    cursor: pointer;
+    transform: rotate(-60deg); 
+    cursor: pointer;    
     // IE8-9 hack for event handling
     //
     // Internet Explorer 8-9 does not support clicks on elements without a set
@@ -210,25 +220,28 @@
     background-color: #000 \9; // IE8
     background-color: rgba(0, 0, 0, 0); // IE9
 
-    border: 1px solid @carousel-indicator-border-color;
+    border: 1px solid @lorange;
     border-radius: 10px;
   }
 
   .active {
     
     margin: 0;
-    background-color: @carousel-indicator-active-bg;
+    // background-color: @carousel-indicator-active-bg;
+    border: 1px solid @white;
+      background: @lorange;
   }
 }
+    
 
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
 .carousel-caption {
   position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
+  // right: 15%;
+  // bottom: 20px;
+  // left: 15%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -239,7 +252,6 @@
     text-shadow: none; // No shadow for button elements in carousel-caption
   }
 }
-
 
 // Scale up controls for tablets and up
 @media screen and (min-width: @screen-sm-min) {
@@ -257,11 +269,11 @@
     }
     .glyphicon-chevron-left,
     .icon-prev {
-      margin-left: (@carousel-control-font-size / -2);
+      margin-left: 5%;
     }
     .glyphicon-chevron-right,
     .icon-next {
-      margin-right: (@carousel-control-font-size / -2);
+      margin-right: 5%;
     }
   }
 
@@ -274,6 +286,6 @@
 
   // Move up the indicators
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 7vh;
   }
 }

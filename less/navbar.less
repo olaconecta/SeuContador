@@ -15,7 +15,7 @@
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
   border: 1px solid transparent;
-
+  
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
 
@@ -183,7 +183,10 @@
     }
   }
 }
-
+.logo-seu-contador {
+  width: 270px;
+  height: auto;
+}
 
 // Navbar toggle
 //
@@ -196,18 +199,19 @@
   padding: 17px 13px;
   margin-right: @navbar-padding-horizontal;
   .navbar-vertical-align(34px);
-  background-color: @purple;
+  background-color: @dorange;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   border-radius: 50%;  
-  box-shadow: 1px 2px 3px @purple;
-  -moz-box-shadow: 1px 2px 3px @purple;
-  -o-box-shadow: 1px 2px 3px @purple;
+  box-shadow: 3px 3px 7px @gray;
+  -moz-box-shadow: 3px 3px 7px @gray;
+  -o-box-shadow: 3px 3px 7px @gray;
+  margin-bottom:3px;
   .anima;
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
   &:focus {
-    background-color: @magenta;
+    // background-color: @magenta;
     outline: 0;
     .anima;
   }
@@ -547,21 +551,27 @@
   }
 
   .navbar-nav {
+    > li.active {
+      // background: lighten(@orange, 30%);
+      text-shadow: 0 0 28px @gray-light;
+    }
     > li > a {
-      color: @navbar-inverse-link-color;
-      background: @purple;
-      padding: 5px 10px;
+      color: @dblue;
+      // background: @white;
+      background: transparent;
+      padding: 7px 15px;
       margin: 20px 15px;
-      border-radius: 3px;
-      -moz-border-radius: 3px;
-      -o-border-radius: 3px;
+      border-radius: 50px;
+      -moz-border-radius: 50px;
+      -o-border-radius: 50px;
       font-size:17px;
+      font-weight: 800;
       .anima;
       &:hover,
       &:focus {
         .anima;
         color: @navbar-inverse-link-hover-color;
-        background-color: @navbar-inverse-link-hover-bg;
+        background-color: @navbar-inverse-link-hover-bg;        
       }
     }
     > .active > a {
@@ -573,6 +583,8 @@
         color: @navbar-inverse-link-active-color;
         background-color: @navbar-inverse-link-active-bg;
         font-weight: 900;
+        // border-bottom: 3px solid @dorange;
+        border-radius: 0;
       }
     }
     > .disabled > a {
