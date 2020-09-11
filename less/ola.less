@@ -848,15 +848,36 @@ a, button, .ola {
     i {
       font-size:49px;
       color:@dblue;
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 14px;
     }  
     h2 {
       color: @dblue;
       font-size:21px;
     }
-    p, li {
+    ul{
+      list-style-type: none;
+      display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    } 
+    li {
       font-size: 17px;
       // line-height: 17px;      
       color:@dblue;
+      text-align: center;
+      margin: auto 10px;
+      padding: 10px 20px;
+      text-transform:Capitalize ; 
+      img {        
+        margin: 0 auto 5px;
+        text-align: center;
+        width: 75px;
+        height: auto;
+      }
     }
     #logo {
       // display: flex;
